@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A60067822C1239500AAB193 /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60067622C1239500AAB193 /* AddExerciseViewController.swift */; };
 		860DFC282297185D00891ECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DFC272297185D00891ECE /* AppDelegate.swift */; };
 		860DFC2A2297185D00891ECE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DFC292297185D00891ECE /* MainViewController.swift */; };
 		860DFC2D2297185D00891ECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860DFC2B2297185D00891ECE /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A60067622C1239500AAB193 /* AddExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
 		860DFC242297185D00891ECE /* exerciseReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exerciseReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		860DFC272297185D00891ECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		860DFC292297185D00891ECE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			children = (
 				860DFC272297185D00891ECE /* AppDelegate.swift */,
 				860DFC292297185D00891ECE /* MainViewController.swift */,
+				1A60067622C1239500AAB193 /* AddExerciseViewController.swift */,
 				860DFC3C22971BA500891ECE /* Cells */,
 				860DFC2B2297185D00891ECE /* Main.storyboard */,
 				860DFC312297186300891ECE /* Assets.xcassets */,
@@ -155,6 +158,7 @@
 			files = (
 				860DFC2A2297185D00891ECE /* MainViewController.swift in Sources */,
 				860DFC302297185D00891ECE /* exerciseReminder.xcdatamodeld in Sources */,
+				1A60067822C1239500AAB193 /* AddExerciseViewController.swift in Sources */,
 				860DFC3F22971BDA00891ECE /* ExerciseMainListCell.swift in Sources */,
 				860DFC282297185D00891ECE /* AppDelegate.swift in Sources */,
 			);
