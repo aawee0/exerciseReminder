@@ -8,12 +8,17 @@
 
 import UIKit
 
-class AddExerciseViewController: UIViewController {
+class AddExerciseViewController: UIViewController, PickerViewControllerDelegate {
+    
+    @IBOutlet weak var timeSelectView: UIView!
+    
+    var selectedDate: Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        timeSelectView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(self.timeSelectViewTapped(_:)) ))
     }
 
 
@@ -31,6 +36,21 @@ class AddExerciseViewController: UIViewController {
         self.dismiss(animated: true) {
             
         }
+    }
+    
+    @objc func timeSelectViewTapped(_ sender: UITapGestureRecognizer) {
+        let pickerViewController = PickerViewController.init()
+        pickerViewController.delegate = self
+        pickerViewController.dateTime = selectedDate
+        pickerViewController.modalPresentationStyle = .overCurrentContext
+        pickerViewController.modalTransitionStyle = .crossDissolve
+        self.present(pickerViewController, animated: true, completion: nil)
+        
+    }
+    
+    func didSelectDatetime(_ datetime: Date) {
+        print("Date:\( datetime )")
+        selectedDate = datetime
     }
     
 }

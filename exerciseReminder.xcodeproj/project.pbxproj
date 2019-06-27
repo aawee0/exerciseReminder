@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A60067822C1239500AAB193 /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60067622C1239500AAB193 /* AddExerciseViewController.swift */; };
+		1A60067D22C25E7A00AAB193 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60067B22C25E7A00AAB193 /* PickerViewController.swift */; };
+		1A60067E22C25E7A00AAB193 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A60067C22C25E7A00AAB193 /* PickerViewController.xib */; };
 		860DFC282297185D00891ECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DFC272297185D00891ECE /* AppDelegate.swift */; };
 		860DFC2A2297185D00891ECE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DFC292297185D00891ECE /* MainViewController.swift */; };
 		860DFC2D2297185D00891ECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860DFC2B2297185D00891ECE /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		1A60067622C1239500AAB193 /* AddExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
+		1A60067B22C25E7A00AAB193 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		1A60067C22C25E7A00AAB193 /* PickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
 		860DFC242297185D00891ECE /* exerciseReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exerciseReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		860DFC272297185D00891ECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		860DFC292297185D00891ECE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A60067A22C25E0800AAB193 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				1A60067B22C25E7A00AAB193 /* PickerViewController.swift */,
+				1A60067C22C25E7A00AAB193 /* PickerViewController.xib */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		860DFC1B2297185D00891ECE = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +78,7 @@
 				860DFC272297185D00891ECE /* AppDelegate.swift */,
 				860DFC292297185D00891ECE /* MainViewController.swift */,
 				1A60067622C1239500AAB193 /* AddExerciseViewController.swift */,
+				1A60067A22C25E0800AAB193 /* Controls */,
 				860DFC3C22971BA500891ECE /* Cells */,
 				860DFC2B2297185D00891ECE /* Main.storyboard */,
 				860DFC312297186300891ECE /* Assets.xcassets */,
@@ -145,6 +159,7 @@
 				860DFC352297186300891ECE /* LaunchScreen.storyboard in Resources */,
 				860DFC322297186300891ECE /* Assets.xcassets in Resources */,
 				860DFC4022971BDA00891ECE /* ExerciseMainListCell.xib in Resources */,
+				1A60067E22C25E7A00AAB193 /* PickerViewController.xib in Resources */,
 				860DFC2D2297185D00891ECE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A60067D22C25E7A00AAB193 /* PickerViewController.swift in Sources */,
 				860DFC2A2297185D00891ECE /* MainViewController.swift in Sources */,
 				860DFC302297185D00891ECE /* exerciseReminder.xcdatamodeld in Sources */,
 				1A60067822C1239500AAB193 /* AddExerciseViewController.swift in Sources */,

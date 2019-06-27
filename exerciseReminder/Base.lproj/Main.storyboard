@@ -119,24 +119,40 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Время:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbO-Ac-YQ8">
-                                <rect key="frame" x="60" y="205" width="56.5" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8H-HD-Ag8">
+                                <rect key="frame" x="60" y="205" width="294" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Время:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbO-Ac-YQ8">
+                                        <rect key="frame" x="0.0" y="0.0" width="56.5" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="MSU-jC-mkB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Не выбрано" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAp-t4-OmH">
+                                        <rect key="frame" x="198" y="0.0" width="96" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="iag-VC-OPt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="MSU-jC-mkB"/>
+                                    <constraint firstItem="XAp-t4-OmH" firstAttribute="top" secondItem="F8H-HD-Ag8" secondAttribute="top" id="4EZ-GO-TMd"/>
+                                    <constraint firstAttribute="height" constant="40" id="Lca-1Y-nZ9"/>
+                                    <constraint firstAttribute="bottom" secondItem="XbO-Ac-YQ8" secondAttribute="bottom" id="XKa-Xa-IDf"/>
+                                    <constraint firstAttribute="trailing" secondItem="XAp-t4-OmH" secondAttribute="trailing" id="aA3-e3-69g"/>
+                                    <constraint firstItem="XbO-Ac-YQ8" firstAttribute="top" secondItem="F8H-HD-Ag8" secondAttribute="top" id="aac-bd-lCN"/>
+                                    <constraint firstItem="XbO-Ac-YQ8" firstAttribute="leading" secondItem="F8H-HD-Ag8" secondAttribute="leading" id="hzX-CM-3Uw"/>
+                                    <constraint firstAttribute="bottom" secondItem="XAp-t4-OmH" secondAttribute="bottom" id="l06-8O-aaO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Не выбрано" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAp-t4-OmH">
-                                <rect key="frame" x="258" y="205" width="96" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="iag-VC-OPt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -149,19 +165,20 @@
                             <constraint firstItem="cNN-Lo-stc" firstAttribute="bottom" secondItem="kpF-OC-fLm" secondAttribute="bottom" id="Ijl-eT-CwM"/>
                             <constraint firstItem="ET1-8S-aZm" firstAttribute="leading" secondItem="cNN-Lo-stc" secondAttribute="leading" id="Mvg-Z7-CIh"/>
                             <constraint firstItem="X1d-KT-Mdd" firstAttribute="top" secondItem="ET1-8S-aZm" secondAttribute="bottom" constant="20" id="PIH-0T-unS"/>
-                            <constraint firstItem="XAp-t4-OmH" firstAttribute="trailing" secondItem="cNN-Lo-stc" secondAttribute="trailing" id="UeF-F1-ykD"/>
+                            <constraint firstItem="F8H-HD-Ag8" firstAttribute="trailing" secondItem="cNN-Lo-stc" secondAttribute="trailing" id="QYB-jM-OLf"/>
+                            <constraint firstItem="F8H-HD-Ag8" firstAttribute="leading" secondItem="cNN-Lo-stc" secondAttribute="leading" id="Qgp-wx-ShW"/>
                             <constraint firstItem="kpF-OC-fLm" firstAttribute="leading" secondItem="hqk-Xx-aKP" secondAttribute="leading" constant="20" id="WhS-YG-2Jn"/>
-                            <constraint firstItem="XbO-Ac-YQ8" firstAttribute="top" secondItem="X1d-KT-Mdd" secondAttribute="bottom" constant="20" id="bbl-30-CPA"/>
+                            <constraint firstItem="F8H-HD-Ag8" firstAttribute="top" secondItem="X1d-KT-Mdd" secondAttribute="bottom" constant="20" id="XKd-5t-JTe"/>
                             <constraint firstItem="ET1-8S-aZm" firstAttribute="trailing" secondItem="cNN-Lo-stc" secondAttribute="trailing" id="dEs-ET-xi1"/>
-                            <constraint firstItem="XAp-t4-OmH" firstAttribute="top" secondItem="XbO-Ac-YQ8" secondAttribute="top" id="hr4-JT-y6X"/>
                             <constraint firstItem="X1d-KT-Mdd" firstAttribute="trailing" secondItem="ET1-8S-aZm" secondAttribute="trailing" id="j9P-3U-Hmq"/>
-                            <constraint firstItem="XbO-Ac-YQ8" firstAttribute="leading" secondItem="cNN-Lo-stc" secondAttribute="leading" id="qOK-6E-b6Y"/>
                             <constraint firstItem="kpF-OC-fLm" firstAttribute="top" secondItem="hqk-Xx-aKP" secondAttribute="top" constant="20" id="vPb-oC-u94"/>
                             <constraint firstItem="cNN-Lo-stc" firstAttribute="top" secondItem="kpF-OC-fLm" secondAttribute="top" id="wnh-ga-p1q"/>
-                            <constraint firstItem="XAp-t4-OmH" firstAttribute="bottom" secondItem="XbO-Ac-YQ8" secondAttribute="bottom" id="zhi-Fq-QpX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hqk-Xx-aKP"/>
                     </view>
+                    <connections>
+                        <outlet property="timeSelectView" destination="F8H-HD-Ag8" id="uzP-Jc-Ci3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytX-DB-Hg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
