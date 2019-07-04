@@ -32,9 +32,7 @@ class PickerViewController: UIViewController, UIPickerViewDelegate {
     }
     
     @objc func backgroundViewTapped(_ sender : UITapGestureRecognizer) {
-        self.dismiss(animated: true) {
-            
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectButtonTapped(_ sender: UIButton) {
@@ -46,14 +44,4 @@ class PickerViewController: UIViewController, UIPickerViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -11,6 +11,8 @@ import UIKit
 class AddExerciseViewController: UIViewController, PickerViewControllerDelegate {
     
     @IBOutlet weak var timeSelectView: UIView!
+    @IBOutlet weak var selectedDateLabel: UILabel!
+    @IBOutlet weak var exerciseNameField: UITextField!
     
     var selectedDate: Date?
 
@@ -20,22 +22,19 @@ class AddExerciseViewController: UIViewController, PickerViewControllerDelegate 
         
         timeSelectView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(self.timeSelectViewTapped(_:)) ))
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func saveButtonTapped(_ sender: UIButton) {
+        if let date = selectedDate, let name = exerciseNameField.text {
+            CoreDataManager.sharedManager.insertEntry(name: name, date: date)
+            self.dismiss(animated: true, completion: nil)
+        }
+        else {
+            print("Not enough input")
+        }
     }
-    */
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        self.dismiss(animated: true) {
-            
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func timeSelectViewTapped(_ sender: UITapGestureRecognizer) {
@@ -51,6 +50,11 @@ class AddExerciseViewController: UIViewController, PickerViewControllerDelegate 
     func didSelectDatetime(_ datetime: Date) {
         print("Date:\( datetime )")
         selectedDate = datetime
+        
+        let format = DateFormatter()
+        format.dateFormat = "dd MMM yyyy HH:mm"
+        
+        selectedDateLabel.text = format.string(from: datetime)
     }
     
 }

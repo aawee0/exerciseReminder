@@ -96,6 +96,9 @@
                                 </constraints>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="checkSign"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="YxO-CS-Aqj" eventType="touchUpInside" id="q62-86-DxF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новое упражнение" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNN-Lo-stc">
                                 <rect key="frame" x="60" y="64" width="294" height="40"/>
@@ -177,6 +180,8 @@
                         <viewLayoutGuide key="safeArea" id="hqk-Xx-aKP"/>
                     </view>
                     <connections>
+                        <outlet property="exerciseNameField" destination="X1d-KT-Mdd" id="XGc-gn-D2P"/>
+                        <outlet property="selectedDateLabel" destination="XAp-t4-OmH" id="mip-8E-IX3"/>
                         <outlet property="timeSelectView" destination="F8H-HD-Ag8" id="uzP-Jc-Ci3"/>
                     </connections>
                 </viewController>

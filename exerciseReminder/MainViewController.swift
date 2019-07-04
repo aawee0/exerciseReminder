@@ -12,10 +12,23 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
+    var exercisesArray: 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.register(UINib(nibName: "ExerciseMainListCell", bundle: nil), forCellReuseIdentifier: "exerciseMainListCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let exercises = CoreDataManager.sharedManager.fetchEntries()
+        for exercise in exercises {
+            print("Name: \( exercise.value(forKey: "name")! ) ")
+        }
+        
+        
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
