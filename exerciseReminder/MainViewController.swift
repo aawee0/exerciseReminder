@@ -12,7 +12,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
-    var exercisesArray: 
+    var exercisesArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +23,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let exercises = CoreDataManager.sharedManager.fetchEntries()
+        let exercises = CoreDataManager.sharedManager.fetchEntryNames()
         for exercise in exercises {
-            print("Name: \( exercise.value(forKey: "name")! ) ")
+            print("Name: \( exercise ) ")
         }
         
         

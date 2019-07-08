@@ -91,5 +91,17 @@ class CoreDataManager {
         }
         return exercises
     }
+    
+    func fetchEntryNames() -> [String] {
+        let exercises = self.fetchEntries()
+        var exerciseNames = [String].init()
+        
+        // for (int i=0; i<exercise.count; i++)
+        for exercise in exercises {
+            exerciseNames.insert(exercise.value(forKey: "name")! as! String, at: 0)
+        }
+        
+        return exerciseNames
+    }
 }
 
