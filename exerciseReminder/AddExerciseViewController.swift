@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AddExerciseViewControllerDelegate : class {
+    func didCreateExercise()
+}
+
 class AddExerciseViewController: UIViewController, PickerViewControllerDelegate {
     
     @IBOutlet weak var timeSelectView: UIView!
@@ -15,6 +19,7 @@ class AddExerciseViewController: UIViewController, PickerViewControllerDelegate 
     @IBOutlet weak var exerciseNameField: UITextField!
     
     var selectedDate: Date?
+    weak var delegate: AddExerciseViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +31,7 @@ class AddExerciseViewController: UIViewController, PickerViewControllerDelegate 
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         if let date = selectedDate, let name = exerciseNameField.text {
             CoreDataManager.sharedManager.insertEntry(name: name, date: date)
+            self.delegate?.didCreateExercise()
             self.dismiss(animated: true, completion: nil)
         }
         else {

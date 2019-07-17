@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddExerciseViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,17 +18,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         self.tableView.register(UINib(nibName: "ExerciseMainListCell", bundle: nil), forCellReuseIdentifier: "exerciseMainListCell")
+        self.reloadExercises()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let exercises = CoreDataManager.sharedManager.fetchEntryNames()
-        for exercise in exercises {
-            print("Name: \( exercise ) ")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier  == "addExerciseVC" {
+            let destination = segue.destination as! AddExerciseViewController
+            destination.delegate = self
         }
-        
-        
+    }
+    
+    func reloadExercises () {
+        exercisesArray = CoreDataManager.sharedManager.fetchEntryNames()
+        self.tableView.reloadData()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -36,7 +43,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return exercisesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,9 +52,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseMainListCell") as! ExerciseMainListCell
         
         print(" cell: \(cell) + \(String(describing: cell.titleLabel.text)) ")
-        cell.titleLabel.text = "First exercise"
+        cell.titleLabel.text = exercisesArray[indexPath.row]
         
         return cell
+    }
+    
+    func didCreateExercise() {
+        self.reloadExercises()
     }
     
 }

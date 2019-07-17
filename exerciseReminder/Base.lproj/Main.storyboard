@@ -43,7 +43,7 @@
                                 <inset key="contentEdgeInsets" minX="10" minY="12" maxX="10" maxY="8"/>
                                 <state key="normal" image="plusSign"/>
                                 <connections>
-                                    <segue destination="YxO-CS-Aqj" kind="presentation" id="phe-Lv-sQy"/>
+                                    <segue destination="YxO-CS-Aqj" kind="presentation" identifier="addExerciseVC" id="phe-Lv-sQy"/>
                                 </connections>
                             </button>
                         </subviews>
