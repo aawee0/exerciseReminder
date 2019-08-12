@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A023AD92301A0CB006ED2A6 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A023AD82301A0CB006ED2A6 /* NotificationManager.swift */; };
 		1A60067822C1239500AAB193 /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60067622C1239500AAB193 /* AddExerciseViewController.swift */; };
 		1A60067D22C25E7A00AAB193 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A60067B22C25E7A00AAB193 /* PickerViewController.swift */; };
 		1A60067E22C25E7A00AAB193 /* PickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A60067C22C25E7A00AAB193 /* PickerViewController.xib */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A023AD82301A0CB006ED2A6 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		1A60067622C1239500AAB193 /* AddExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
 		1A60067B22C25E7A00AAB193 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		1A60067C22C25E7A00AAB193 /* PickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerViewController.xib; sourceTree = "<group>"; };
@@ -49,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A023AD72301A09F006ED2A6 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1AD3F5B722CB5F5B00283C0A /* CoreDataManager.swift */,
+				1A023AD82301A0CB006ED2A6 /* NotificationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		1A60067A22C25E0800AAB193 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,11 +89,11 @@
 			isa = PBXGroup;
 			children = (
 				860DFC272297185D00891ECE /* AppDelegate.swift */,
-				1AD3F5B722CB5F5B00283C0A /* CoreDataManager.swift */,
 				860DFC292297185D00891ECE /* MainViewController.swift */,
 				1A60067622C1239500AAB193 /* AddExerciseViewController.swift */,
-				1A60067A22C25E0800AAB193 /* Controls */,
 				860DFC3C22971BA500891ECE /* Cells */,
+				1A023AD72301A09F006ED2A6 /* Managers */,
+				1A60067A22C25E0800AAB193 /* Controls */,
 				860DFC2B2297185D00891ECE /* Main.storyboard */,
 				860DFC312297186300891ECE /* Assets.xcassets */,
 				860DFC332297186300891ECE /* LaunchScreen.storyboard */,
@@ -180,6 +191,7 @@
 				1A60067822C1239500AAB193 /* AddExerciseViewController.swift in Sources */,
 				860DFC3F22971BDA00891ECE /* ExerciseMainListCell.swift in Sources */,
 				1AD3F5B822CB5F5B00283C0A /* CoreDataManager.swift in Sources */,
+				1A023AD92301A0CB006ED2A6 /* NotificationManager.swift in Sources */,
 				860DFC282297185D00891ECE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
