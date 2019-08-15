@@ -13,30 +13,54 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseMainListCell" id="KGk-i7-Jjw" customClass="ExerciseMainListCell" customModule="exerciseReminder" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="53.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gET-y3-duw">
-                        <rect key="frame" x="16" y="11" width="288" height="21.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdF-bV-LjZ">
+                        <rect key="frame" x="0.0" y="6" width="320" height="41.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XkP-fN-6yq" userLabel="Subcontent View">
+                        <rect key="frame" x="8" y="6" width="304" height="41.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gET-y3-duw">
+                                <rect key="frame" x="8" y="10" width="288" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.039215686274509803" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gET-y3-duw" secondAttribute="bottom" constant="10" id="09f-Pm-CDD"/>
+                            <constraint firstItem="gET-y3-duw" firstAttribute="top" secondItem="XkP-fN-6yq" secondAttribute="top" constant="10" id="8GZ-S6-wbk"/>
+                            <constraint firstAttribute="trailing" secondItem="gET-y3-duw" secondAttribute="trailing" constant="8" id="9PW-fy-f5h"/>
+                            <constraint firstItem="gET-y3-duw" firstAttribute="leading" secondItem="XkP-fN-6yq" secondAttribute="leading" constant="8" id="bYa-ER-OOK"/>
+                        </constraints>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="gET-y3-duw" secondAttribute="bottom" constant="11" id="APn-w7-Oum"/>
-                    <constraint firstAttribute="trailing" secondItem="gET-y3-duw" secondAttribute="trailing" constant="16" id="RMw-81-9p1"/>
-                    <constraint firstItem="gET-y3-duw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="fgw-9Y-8DW"/>
-                    <constraint firstItem="gET-y3-duw" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="pgc-5c-0hR"/>
+                    <constraint firstAttribute="trailing" secondItem="bdF-bV-LjZ" secondAttribute="trailing" id="4wx-Xc-5ug"/>
+                    <constraint firstAttribute="bottom" secondItem="XkP-fN-6yq" secondAttribute="bottom" constant="6" id="8EN-cU-9wI"/>
+                    <constraint firstItem="bdF-bV-LjZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="92f-mP-i7O"/>
+                    <constraint firstItem="XkP-fN-6yq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Lz3-Ef-mQy"/>
+                    <constraint firstAttribute="trailing" secondItem="XkP-fN-6yq" secondAttribute="trailing" constant="8" id="P2y-m4-Oka"/>
+                    <constraint firstItem="bdF-bV-LjZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QAp-2J-b2D"/>
+                    <constraint firstAttribute="bottom" secondItem="bdF-bV-LjZ" secondAttribute="bottom" constant="6" id="QQ9-e4-Ykh"/>
+                    <constraint firstItem="XkP-fN-6yq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="n2g-X4-hho"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="roundCornerView" destination="bdF-bV-LjZ" id="ENr-MM-z8n"/>
                 <outlet property="titleLabel" destination="gET-y3-duw" id="fsC-Lb-8VF"/>
             </connections>
+            <point key="canvasLocation" x="34.782608695652179" y="34.821428571428569"/>
         </tableViewCell>
     </objects>
 </document>

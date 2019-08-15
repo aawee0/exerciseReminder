@@ -88,17 +88,17 @@
 		860DFC262297185D00891ECE /* exerciseReminder */ = {
 			isa = PBXGroup;
 			children = (
+				860DFC2B2297185D00891ECE /* Main.storyboard */,
 				860DFC272297185D00891ECE /* AppDelegate.swift */,
 				860DFC292297185D00891ECE /* MainViewController.swift */,
 				1A60067622C1239500AAB193 /* AddExerciseViewController.swift */,
 				860DFC3C22971BA500891ECE /* Cells */,
 				1A023AD72301A09F006ED2A6 /* Managers */,
 				1A60067A22C25E0800AAB193 /* Controls */,
-				860DFC2B2297185D00891ECE /* Main.storyboard */,
-				860DFC312297186300891ECE /* Assets.xcassets */,
 				860DFC332297186300891ECE /* LaunchScreen.storyboard */,
 				860DFC362297186300891ECE /* Info.plist */,
 				860DFC2E2297185D00891ECE /* exerciseReminder.xcdatamodeld */,
+				860DFC312297186300891ECE /* Assets.xcassets */,
 			);
 			path = exerciseReminder;
 			sourceTree = "<group>";

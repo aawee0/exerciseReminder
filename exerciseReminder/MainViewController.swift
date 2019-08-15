@@ -11,22 +11,28 @@ import UIKit
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddExerciseViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headerView: UIView!
     
     var exercisesArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationManager.sharedManager.createNotificationsForExercises()
         initBackgroundColor()
         
-        self.tableView.register(UINib(nibName: "ExerciseMainListCell", bundle: nil), forCellReuseIdentifier: "exerciseMainListCell")
+        headerView.layoutIfNeeded()
+        setRoundCornersForHeader()
+        tableView.register(UINib(nibName: "ExerciseMainListCell", bundle: nil), forCellReuseIdentifier: "exerciseMainListCell")
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.contentInset = UIEdgeInsets(top: headerView.frame.height - view.safeAreaInsets.top, left: 0, bottom: 0, right: 0)
         
-        NotificationManager.sharedManager.createNotificationsForExercises()
-        self.reloadExercises()
+        reloadExercises()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,14 +55,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.layer.insertSublayer(gl, at: 0)
     }
     
+    func setRoundCornersForHeader () {
+        let path = UIBezierPath(roundedRect:headerView.bounds, byRoundingCorners:[.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 48, height: 48))
+        let maskLayer = CAShapeLayer()
+        
+        maskLayer.path = path.cgPath
+        headerView.layer.mask = maskLayer
+    }
+    
     func reloadExercises () {
         exercisesArray = CoreDataManager.sharedManager.fetchEntryNames()
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exercisesArray.count
@@ -75,7 +91,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func didCreateExercise() {
         NotificationManager.sharedManager.createNotificationsForExercises()
-        self.reloadExercises()
+        reloadExercises()
     }
     
 }
