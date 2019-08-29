@@ -24,6 +24,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         setRoundCornersForHeader()
         tableView.register(UINib(nibName: "ExerciseMainListCell", bundle: nil), forCellReuseIdentifier: "exerciseMainListCell")
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.allowsSelection = false
         tableView.contentInset = UIEdgeInsets(top: headerView.frame.height - view.safeAreaInsets.top, left: 0, bottom: 0, right: 0)
         
         reloadExercises()
