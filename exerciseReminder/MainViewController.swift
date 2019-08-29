@@ -8,7 +8,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddExerciseViewControllerDelegate {
+let kTopTitleViewCornerRadius = 48
+
+class MainViewController: UIViewController, AddExerciseViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
@@ -20,8 +22,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationManager.sharedManager.createNotificationsForExercises()
         initBackgroundColor()
         
-        headerView.layoutIfNeeded()
-        setRoundCornersForHeader()
         tableView.register(UINib(nibName: "ExerciseMainListCell", bundle: nil), forCellReuseIdentifier: "exerciseMainListCell")
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.allowsSelection = false
@@ -30,10 +30,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         reloadExercises()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
-
+        setRoundCornersForHeader()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,31 +57,35 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func setRoundCornersForHeader () {
-        let path = UIBezierPath(roundedRect:headerView.bounds, byRoundingCorners:[.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 48, height: 48))
+        let path = UIBezierPath(roundedRect:headerView.bounds, byRoundingCorners:[.bottomLeft, .bottomRight], cornerRadii: CGSize(width: kTopTitleViewCornerRadius, height: kTopTitleViewCornerRadius))
         let maskLayer = CAShapeLayer()
         
         maskLayer.path = path.cgPath
         headerView.layer.mask = maskLayer
+        headerView.layer.masksToBounds = true
     }
     
     func reloadExercises () {
         exercisesArray = CoreDataManager.sharedManager.fetchEntryNames()
         tableView.reloadData()
     }
+    
+    func didCreateExercise() {
+        NotificationManager.sharedManager.createNotificationsForExercises()
+        reloadExercises()
+    }
+}
 
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return exercisesArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseMainListCell") as! ExerciseMainListCell
         
         print(" cell: \(cell) + \(String(describing: cell.titleLabel.text)) ")
@@ -89,11 +93,4 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-    
-    func didCreateExercise() {
-        NotificationManager.sharedManager.createNotificationsForExercises()
-        reloadExercises()
-    }
-    
 }
-
