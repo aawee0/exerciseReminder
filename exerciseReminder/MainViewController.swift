@@ -15,7 +15,7 @@ class MainViewController: UIViewController, AddExerciseViewControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: UIView!
     
-    var exercisesArray: [String] = []
+    var exercisesArray: [ExerciseModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +66,7 @@ class MainViewController: UIViewController, AddExerciseViewControllerDelegate {
     }
     
     func reloadExercises () {
-        exercisesArray = CoreDataManager.sharedManager.fetchEntryNames()
+        exercisesArray = CoreDataManager.sharedManager.fetchExercises()
         tableView.reloadData()
     }
     
@@ -88,8 +88,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exerciseMainListCell") as! ExerciseMainListCell
         
-        print(" cell: \(cell) + \(String(describing: cell.titleLabel.text)) ")
-        cell.titleLabel.text = exercisesArray[indexPath.row]
+        cell.updateWithExercise(exercise: exercisesArray[indexPath.row])
         
         return cell
     }

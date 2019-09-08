@@ -45,8 +45,6 @@ class CoreDataManager {
         return container
     }()
     
-    
-    
     // MARK: - Core Data Saving support
     
     func saveContext () {
@@ -63,14 +61,14 @@ class CoreDataManager {
         }
     }
     
-    func insertEntry(name: String, date: Date) {
+    func insertEntry(exerciseModel: ExerciseModel) {
         let context = persistentContainer.viewContext
         
         let entity = NSEntityDescription.entity(forEntityName: "Exercise", in: context)!
         let exercise = NSManagedObject(entity: entity, insertInto: context)
         
-        exercise.setValue(name, forKeyPath: "name")
-        exercise.setValue(date, forKeyPath: "exerciseDate")
+        exercise.setValue(exerciseModel.name, forKeyPath: "name")
+        exercise.setValue(exerciseModel.exerciseDate, forKeyPath: "exerciseDate")
         
         do {
             try context.save()
@@ -92,16 +90,18 @@ class CoreDataManager {
         return exercises
     }
     
-    func fetchEntryNames() -> [String] {
+    func fetchExercises() -> [ExerciseModel] {
         let exercises = self.fetchEntries()
-        var exerciseNames = [String].init()
+        var exerciseModels = [ExerciseModel].init()
         
-        // for (int i=0; i<exercise.count; i++)
         for exercise in exercises {
-            exerciseNames.insert(exercise.value(forKey: "name")! as! String, at: 0)
+            let name = exercise.value(forKey: "name")! as! String
+            let date = exercise.value(forKey: "exerciseDate")! as! Date
+            let exerciseModel = ExerciseModel.init(name: name, date: date)
+            exerciseModels.insert(exerciseModel, at: 0)
         }
         
-        return exerciseNames
+        return exerciseModels
     }
 }
 

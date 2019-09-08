@@ -11,6 +11,8 @@ import UIKit
 class ExerciseMainListCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var roundCornerView: UIView!
 
     override func awakeFromNib() {
@@ -22,10 +24,15 @@ class ExerciseMainListCell: UITableViewCell {
         self.roundCornerView.clipsToBounds = true
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func updateWithExercise(exercise : ExerciseModel) {
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "dd MMM yy"
+        let timeFormat = DateFormatter()
+        timeFormat.dateFormat = "HH:mm"
+        
+        self.titleLabel.text = exercise.name
+        self.dateLabel.text = dateFormat.string(from: exercise.exerciseDate!)
+        self.timeLabel.text = timeFormat.string(from: exercise.exerciseDate!)
     }
     
 }

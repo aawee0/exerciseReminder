@@ -20,6 +20,7 @@
 		860DFC352297186300891ECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860DFC332297186300891ECE /* LaunchScreen.storyboard */; };
 		860DFC3F22971BDA00891ECE /* ExerciseMainListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860DFC3D22971BDA00891ECE /* ExerciseMainListCell.swift */; };
 		860DFC4022971BDA00891ECE /* ExerciseMainListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860DFC3E22971BDA00891ECE /* ExerciseMainListCell.xib */; };
+		8624AC1B23256201007FC3FC /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624AC1A23256201007FC3FC /* ExerciseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		860DFC362297186300891ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		860DFC3D22971BDA00891ECE /* ExerciseMainListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseMainListCell.swift; sourceTree = "<group>"; };
 		860DFC3E22971BDA00891ECE /* ExerciseMainListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseMainListCell.xib; sourceTree = "<group>"; };
+		8624AC1A23256201007FC3FC /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +95,9 @@
 				860DFC292297185D00891ECE /* MainViewController.swift */,
 				1A60067622C1239500AAB193 /* AddExerciseViewController.swift */,
 				860DFC3C22971BA500891ECE /* Cells */,
-				1A023AD72301A09F006ED2A6 /* Managers */,
 				1A60067A22C25E0800AAB193 /* Controls */,
+				8624AC1723256099007FC3FC /* Model */,
+				1A023AD72301A09F006ED2A6 /* Managers */,
 				860DFC332297186300891ECE /* LaunchScreen.storyboard */,
 				860DFC362297186300891ECE /* Info.plist */,
 				860DFC2E2297185D00891ECE /* exerciseReminder.xcdatamodeld */,
@@ -110,6 +113,14 @@
 				860DFC3E22971BDA00891ECE /* ExerciseMainListCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8624AC1723256099007FC3FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8624AC1A23256201007FC3FC /* ExerciseModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				860DFC3F22971BDA00891ECE /* ExerciseMainListCell.swift in Sources */,
 				1AD3F5B822CB5F5B00283C0A /* CoreDataManager.swift in Sources */,
 				1A023AD92301A0CB006ED2A6 /* NotificationManager.swift in Sources */,
+				8624AC1B23256201007FC3FC /* ExerciseModel.swift in Sources */,
 				860DFC282297185D00891ECE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,7 +30,8 @@ class AddExerciseViewController: UIViewController, PickerViewControllerDelegate 
     
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         if let date = selectedDate, let name = exerciseNameField.text {
-            CoreDataManager.sharedManager.insertEntry(name: name, date: date)
+            let exercise = ExerciseModel.init(name: name, date: date)
+            CoreDataManager.sharedManager.insertEntry(exerciseModel: exercise)
             self.delegate?.didCreateExercise()
             self.dismiss(animated: true, completion: nil)
         }
