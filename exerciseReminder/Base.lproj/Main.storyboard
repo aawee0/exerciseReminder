@@ -90,6 +90,7 @@
                                     <constraint firstAttribute="width" constant="40" id="4E9-HU-MSA"/>
                                     <constraint firstAttribute="height" constant="40" id="UVJ-CS-XQB"/>
                                 </constraints>
+                                <color key="tintColor" red="0.90196078431372551" green="0.24705882352941178" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="crossSign"/>
                                 <connections>
@@ -102,6 +103,7 @@
                                     <constraint firstAttribute="height" constant="40" id="8oX-HT-Uas"/>
                                     <constraint firstAttribute="width" constant="40" id="JMA-6a-lJW"/>
                                 </constraints>
+                                <color key="tintColor" red="0.90196078431372551" green="0.24705882352941178" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="checkSign"/>
                                 <connections>
@@ -116,7 +118,7 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ET1-8S-aZm">
                                 <rect key="frame" x="60" y="124" width="294" height="1"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="xyC-ut-CaC"/>
                                 </constraints>
@@ -152,7 +154,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="XAp-t4-OmH" firstAttribute="top" secondItem="F8H-HD-Ag8" secondAttribute="top" id="4EZ-GO-TMd"/>
@@ -165,7 +167,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.9137254901960784" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ET1-8S-aZm" firstAttribute="top" secondItem="cNN-Lo-stc" secondAttribute="bottom" constant="20" id="1Kr-Df-RuI"/>
                             <constraint firstItem="hqk-Xx-aKP" firstAttribute="trailing" secondItem="z3z-dK-SUX" secondAttribute="trailing" constant="20" id="GQp-YA-aX9"/>
